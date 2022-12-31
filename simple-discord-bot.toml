@@ -1,0 +1,133 @@
+
+#General Mod Config
+[general]
+	#Should the bot be enabled or not
+	enabled = true
+	#Should debug logging be enabled? WARNING: THIS CAN SPAM YOUR LOG!
+	debugging = false
+	#Should the bot be allowed to whitelist/un-whitelist players. Whitelisting needs to be enabled on your server as well
+	whitelisting = true
+	#Should the bot be allowed to whitelist/un-whitelist players in OFFLINE mode. Whitelisting needs to be enabled on your server as well
+	offlinewhitelist = true
+	#Automatically link Minecraft and Discord Accounts when a user is whitelisted
+	linkedWhitelist = true
+	#Should only admins be allowed to whitelist players
+	onlyAdminsWhitelist = false
+	#Should the /discord command be enabled in game
+	inviteCommandEnabled = false
+	#Discord Invite Link used by the in-game invite command
+	inviteLink = ""
+	#Internal version control. DO NOT TOUCH!
+	configVersion = 15
+
+#Config specific to the discord bot
+[botConfig]
+	#The Token of the Bot to use. KEEP THIS PRIVATE. See https://readme.firstdarkdev.xyz/simple-discord-link/initial-setup/ to find this
+	botToken = "MTA0NjA0MjA2Njc3NTQ1NzgyMg.GQ9hkF.bYuYv0WGgLgiYlrU1xCDTl0VXKX4GG9Wse6Gt0"
+	#How quickly the bot status should update
+	activityUpdateInterval = 30
+	#Should the bot use / commands. NOTE: THIS MAY TAKE UP TO 24 HOURS TO SHOW UP IN YOUR DISCORD
+	slashCommands = true
+	#The prefix to use for bot commands. Example: ~players. THIS HAS NO EFFECT WHEN USING SLASH COMMANDS
+	botPrefix = "#"
+	#Do not add Playing. A status to display on the bot. You can use %players% and %maxplayers% to show the number of players on the server
+	botStatus = "Minecrafting : %players%/%maxplayers%"
+	#Should the bot update the topic of your chat channel automatically
+	doTopicUpdates = true
+	#A topic for the Chat Relay channel. You can use %player%, %maxplayers%, %uptime% or just leave it empty.
+	channelTopic = "Minecrafting with %players%/%maxplayers% people | 152.69.212.182:25581 | Uptime: %uptime%"
+
+#Config relating to the discord channels to use with the mod
+[channels]
+	#The ID of the channel to post in and relay messages from. This is still needed, even in webhook mode
+	chatChannelID = 897781163685466122
+	#If this ID is set, event messages will be posted in this channel instead of the chat channel
+	eventsChannelID = 1047064068403507290
+	#Use EMBED style messages for chat channel messages
+	chatEmbeds = false
+	#Use EMBED style messages for event channel messages
+	eventEmbeds = false
+
+#Webhook Config
+[webhooks]
+	#Should webhook messages be used
+	enabled = true
+	#The URL of the channel webhook to use for Chat Messages
+	chatWebhook = "https://discord.com/api/webhooks/1047061617780719646/uEJqO-pX1LR7uFzCoMhS7sYqBUbW-lJr7aD3DuFXeJVAwcZGAnE22Y57D2CMazFSD7BE"
+	#The URL of the channel webhook to use for Server Messages
+	eventsWebhook = "https://discord.com/api/webhooks/1047061620817403947/KHbx2O1fpJHrOGgAhAJaPJccVrEJeOSSTv4EDJaFzCGz66C798THt36opR1NCvV7kW5V"
+	#Use EMBED style messages for chat channel messages
+	chatEmbeds = false
+	#Use EMBED style messages for event channel messages
+	eventEmbeds = false
+	#A DIRECT link to an image to use as the avatar for server messages. Also used for embeds
+	# serverAvatar = "https://cdn.discordapp.com/attachments/897781163685466122/1047072987385446400/2021-11-04_15.28.47.png"
+    serverAvatar = "https://cdn.discordapp.com/attachments/897781163685466122/1047165781688979506/2021-11-10_15.39.28.png"
+	#The name to display for Server messages when using Webhooks
+	serverName = "Server"
+
+#Chat Config
+[chat]
+	#The type of image to use as the player icon in messages. Valid entries are: AVATAR, HEAD, BODY, COMBO
+	playerAvatarType = "HEAD"
+	#Prefix to add to Minecraft when a message is relayed from Discord. Supports MC formatting. Use %user% for the Discord Username
+	mcPrefix = "§e[Discord]§r %user%: "
+	#Should messages from bots be relayed
+	ignoreBots = true
+	#Should SERVER STARTING messages be shown
+	serverStarting = true
+	#Should SERVER STARTED messages be shown
+	serverStarted = true
+	#Should SERVER STOPPING messages be shown
+	serverStopping = true
+	#Should SERVER STOPPED messages be shown
+	serverStopped = true
+	#Should the chat be relayed
+	playerMessages = true
+	#Should Join and Leave messages be posted
+	joinAndLeaveMessages = true
+	#Should Advancement messages be posted
+	advancementMessages = true
+	#Should Death Announcements be posted
+	deathMessages = true
+	#Should Messages from the /say command be posted
+	sendSayCommand = true
+	#Should commands be posted to discord
+	broadcastCommands = false
+	#Commands that should not be broadcasted to discord
+	ignoredCommands = ["particle", "login"]
+	#Should Tell Raw messages be posted
+	sendTellRaw = true
+
+#Change the contents of certain event messages
+[messages]
+	#Server Starting Message
+	serverStarting = ":arrows_counterclockwise: Server is starting..."
+	#Server Started Message
+	serverStarted = ":white_check_mark: Server has started. Enjoy!"
+	#Server Stopping Message
+	serverStopping = ":arrows_counterclockwise: Server is stopping..."
+	#Server Stopped Message
+	serverStopped = ":stop_button: Server has stopped..."
+	#Player Joined Message. Use %player% to display the player name
+	playerJoined = ":door: %player% has joined the server!"
+	#Player Left Message. Use %player% to display the player name
+	playerLeft = ":door: %player% has left the server!"
+	#Achievement Messages. Available variables: %player%, %title%, %description%
+	achievements = ":nerd: %player% has made the advancement [%title%]: %description%"
+	#Chat Messages. Available variables: %player%, %message%
+	chat = "%message%"
+	#The message to show when someone uses /discord command. You can use %inviteurl%
+	inviteMessage = "Hey, check out our discord server here -> %inviteurl%"
+
+#Change in which channel messages appear
+[messageDestinations]
+	#Should Server Starting/Started/Stopping/Stopped Messages be in chat. If false, it will appear in the log channel
+	statusInChat = false
+	#Should Join/Leave Messages be in chat. If false, it will appear in the log channel
+	joinLeaveInChat = true
+	#Should Advancement Messages be in chat. If false, it will appear in the log channel
+	advancementsInChat = true
+	#Should Death messages be in chat. If false, it will appear in the log channel
+	deathInChat = true
+
